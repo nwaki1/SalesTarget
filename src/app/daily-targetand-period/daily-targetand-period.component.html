@@ -1,0 +1,55 @@
+<!-- <div class="container"> -->
+<div class="col-12 pt-2">
+    
+    <tabset #staticTabs>
+      <tab heading="Weekly" class="round">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-6">
+                <div class="row">
+                    <div class="col-8">Calls</div>
+                    <div class="col-4">
+                        <div>Today</div>
+                        <div>10 | 20</div>
+                    </div>
+                </div>
+                <div style="display: block">
+                    <canvas baseChart
+                            [datasets]="barChartData"
+                            [labels]="barChartLabels"
+                            [options]="barChartOptions"
+                            [legend]="barChartLegend"
+                            [chartType]="barChartType">
+                    </canvas>
+                  </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6">
+                <div class="row">
+                    <div class="col-8">Total Orders</div>
+                    <div class="col-4">
+                        <div>Today</div>
+                        <div>Rp. 20.0000</div>
+                    </div>
+                </div>
+                <div style="display: block">
+                    <canvas baseChart
+                            [datasets]="barChartData"
+                            [labels]="barChartLabels"
+                            [options]="barChartOptions"
+                            [legend]="barChartLegend"
+                            [chartType]="barChartType">
+                    </canvas>
+                  </div>
+            </div>
+          </div>
+        </tab>
+      <tab heading="Monthly">Static content 1</tab>
+      <tab heading="Quarter">Static content 2</tab>
+    </tabset>
+</div>
+<!-- </div> -->
+
+<style>
+    .round {
+        border-top: 20px;
+    }
+</style>
