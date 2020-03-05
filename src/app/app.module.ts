@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { DailyTargetandPeriodComponent } from './daily-targetand-period/daily-targetand-period.component';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
+import { TargetComponent } from './target/target.component';
+import { TargetListComponent } from './target-list/target-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DailyTargetandPeriodComponent
+    DailyTargetandPeriodComponent,
+    TargetComponent,
+    TargetListComponent
   ],
   imports: [
     BrowserModule,
