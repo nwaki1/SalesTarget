@@ -8,25 +8,26 @@ import { Component, OnInit } from '@angular/core';
 export class TargetComponent implements OnInit {
 
   constructor() { }
-
+  dateNow='5 March 2020';
   ngOnInit() {
+    
   }
   ToDoList = [
     {
       Title: 'To do title',
-      Percentage: 'finished work',
+      Percentage: 50,
       Time: '2h',
       Detail:'detail here'
     },
     {
       Title: 'To do title',
-      Percentage: 'finished work',
+      Percentage: 70,
       Time: '2h',
       Detail:'detail here'
     },
     {
       Title: 'To do title',
-      Percentage: 'finished work',
+      Percentage: 30,
       Time: '2h',
       Detail:'detail here'
     },

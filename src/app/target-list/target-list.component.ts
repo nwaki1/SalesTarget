@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'app-target-list',
@@ -9,7 +9,10 @@ export class TargetListComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  @Input('item') item:any; //input utk terima data dari parent 
 
+  ngOnInit() {
+    console.log(this.item);
+  }
+  
 }

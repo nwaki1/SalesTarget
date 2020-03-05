@@ -1,10 +1,10 @@
 <div class="bg-white ">
     <div class="container pt-5 pb-4 ">
         <div class="d-flex justify-content-end">
-            <div>6 Sep 2019</div>
+            <div>{{dateNow}}</div>
         </div>
         <h1>To Do Lists</h1>
-        <div>7 Tasks Left</div> 
+        <div>{{ToDoList.length}} Tasks Left</div> 
 </div>        
     </div>
     <div class="container my-3 ">
@@ -15,4 +15,6 @@
             </div>
          </div>
     </div>
-  
+
+
+<app-target-list *ngFor ="let item of ToDoList;let i = index;" [item]="item" ></app-target-list> <!--[item]=item means simpan array yg d ts {titel..} ke dalam array item biar bs d kirim ke child-->

@@ -8,6 +8,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import { TargetComponent } from './target/target.component';
 import { TargetListComponent } from './target-list/target-list.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,10 @@ import { TargetListComponent } from './target-list/target-list.component';
     BrowserModule,
     AppRoutingModule,
     ChartsModule,
-    TabsModule.forRoot()
+    TabsModule.forRoot(),
+    RouterModule.forRoot([
+      { path: '', component:TargetComponent},
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
