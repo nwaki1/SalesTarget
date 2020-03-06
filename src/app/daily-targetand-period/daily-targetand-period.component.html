@@ -1,28 +1,34 @@
 <div class="images-header">
-    <!-- <span class="title mt-3">Analityc</span> -->
-    <div class="d-flex align-items-end h-100">
-        <!-- <div class="row"> -->
-            <div class="col-11 px-0 ml-3">
-                <div class="row d-flex align-items-end">
-                    <div class="col-3 px-0">
-                        <div class="box d-flex tab-title justify-content-center py-2">
-                            Weekly
+    <div class="pt-3 pl-3 h-50">
+        <span class="title mb-2">Analityc</span>
+    </div>
+    <div class="d-flex align-items-end h-50">
+        <div class="col-12">
+        <!-- <div class="col-11 px-0"> -->
+            <!-- <div class="row"> -->
+                <div class="col-11 px-0 ml-3">
+                    <div class="row d-flex align-items-end">
+                        <div class="col-3 px-0">
+                            <div [ngClass]="tabClass('Weekly')" (click)="selectTabs('Weekly')">
+                                Weekly
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-3 px-0">
-                        <div class="box d-flex tab-title justify-content-center py-1">
-                            Monthly
-                        </div> 
-                    </div>
-                    <div class="col-3 px-0">
-                        <div class="box d-flex tab-title justify-content-center py-1">
-                            Quarter
+                        <div class="col-3 px-0">
+                            <div [ngClass]="tabClass('Monthly')" (click)="selectTabs('Monthly')">
+                                Monthly
+                            </div> 
                         </div>
+                        <div class="col-3 px-0">
+                            <div [ngClass]="tabClass('Quarter')" (click)="selectTabs('Quarter')">
+                                Quarter
+                            </div>
+                        </div>
+                        <div class="col-3 px-0"></div>
                     </div>
-                    <div class="col-3 px-0"></div>
                 </div>
-            </div>
+            <!-- </div> -->
         <!-- </div> -->
+        </div>
     </div>
 </div>
 <div>

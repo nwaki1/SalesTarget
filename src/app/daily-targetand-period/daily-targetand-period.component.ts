@@ -50,9 +50,23 @@ export class DailyTargetandPeriodComponent implements OnInit {
     {data: [28, 48, 40, 19, 86, 27], label: 'Total', backgroundColor : '#C7F2F0'}
   ];
 
+  selectedTab = 'Weekly';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  tabClass(selectedTab) {
+    if (selectedTab === this.selectedTab) {
+      return 'box d-flex tab-title justify-content-center py-2';
+    } else {
+      return 'box d-flex tab-title justify-content-center py-1';
+    }
+  }
+
+  selectTabs(selectedTab) {
+    this.selectedTab = selectedTab;
   }
 
   selectTab(tabId: number) {
