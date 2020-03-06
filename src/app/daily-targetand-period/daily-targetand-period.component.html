@@ -3,80 +3,75 @@
         <span class="title mb-2">Analityc</span>
     </div>
     <div class="d-flex align-items-end h-50">
-        <div class="col-12">
-        <!-- <div class="col-11 px-0"> -->
-            <!-- <div class="row"> -->
-                <div class="col-11 px-0 ml-3">
-                    <div class="row d-flex align-items-end">
-                        <div class="col-3 px-0">
-                            <div [ngClass]="tabClass('Weekly')" (click)="selectTabs('Weekly')">
-                                Weekly
-                            </div>
-                        </div>
-                        <div class="col-3 px-0">
-                            <div [ngClass]="tabClass('Monthly')" (click)="selectTabs('Monthly')">
-                                Monthly
-                            </div> 
-                        </div>
-                        <div class="col-3 px-0">
-                            <div [ngClass]="tabClass('Quarter')" (click)="selectTabs('Quarter')">
-                                Quarter
-                            </div>
-                        </div>
-                        <div class="col-3 px-0"></div>
+        <div class="col-11 px-0 ml-3">
+            <div class="row d-flex align-items-end">
+                <div class="col-3 px-0">
+                    <div [ngClass]="tabClass('Weekly')" (click)="selectTabs('Weekly')">
+                        Weekly
                     </div>
                 </div>
-            <!-- </div> -->
-        <!-- </div> -->
-        </div>
-    </div>
-</div>
-<div>
-    <div class="col-12 col-md-6 col-lg-6 my-3">
-        <div class="card p-1" style="border: none;background-color: #fbfbfb;">
-            <div class="px-2">
-                <div class="row">
-                    <div class="col-8 d-flex align-items-center">
-                        <div style="font-weight: 700;">Calls</div>
-                    </div>
-                    <div class="col-4">
-                        <div class="text-right" style="font-weight: 700;font-size: x-small;">Today</div>
-                        <div class="text-right" style="font-weight: 700;font-size: small;">10 | 20</div>
-                        <div class="text-right brown-small-text" style="font-size: xx-small;">Eff | Total</div>
+                <div class="col-3 px-0">
+                    <div [ngClass]="tabClass('Monthly')" (click)="selectTabs('Monthly')">
+                        Monthly
+                    </div> 
+                </div>
+                <div class="col-3 px-0">
+                    <div [ngClass]="tabClass('Quarter')" (click)="selectTabs('Quarter')">
+                        Quarter
                     </div>
                 </div>
-            </div>
-            <div style="border: 0.5px solid;border-color: #dbd6d6;margin-top: 6px;margin-bottom: 1px;"></div>
-            <div style="display: block">
-                <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels"
-                    [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType">
-                </canvas>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 col-md-6 col-lg-6 my-3">
-        <div class="card p-1" style="border: none;background-color: #fbfbfb;">
-            <div class="px-2">
-                <div class="row">
-                    <div class="col-8 d-flex align-items-center">
-                        <div style="font-weight: 700;">Total Orders</div>
-                    </div>
-                    <div class="col-4">
-                        <div class="text-right" style="font-weight: 700;font-size: small;">Today</div>
-                        <div class="text-right" style="font-weight: 700;font-size: small;">Rp. 20.000</div>
-                    </div>
-                </div>
-            </div>
-            <div style="border: 0.5px solid;border-color: #dbd6d6;margin-top: 6px;margin-bottom: 1px;"></div>
-            <div style="display: block">
-                <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels"
-                    [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType">
-                </canvas>
+                <div class="col-3 px-0"></div>
             </div>
         </div>
     </div>
 </div>
-<!-- </div> -->
+<div class="col-11 px-0 ml-3">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-6 my-3">
+            <div class="card p-1" style="border: none;background-color: #fbfbfb;">
+                <div class="px-2">
+                    <div class="row">
+                        <div class="col-8 d-flex align-items-center">
+                            <div style="font-weight: 700;">Calls</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="text-right" style="font-weight: 700;font-size: x-small;">Today</div>
+                            <div class="text-right" style="font-weight: 700;font-size: small;">10 | 20</div>
+                            <div class="text-right brown-small-text" style="font-size: xx-small;">Eff | Total</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="border: 0.5px solid;border-color: #dbd6d6;margin-top: 6px;margin-bottom: 1px;"></div>
+                <div style="display: block">
+                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                        [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-6 my-3">
+            <div class="card p-1" style="border: none;background-color: #fbfbfb;">
+                <div class="px-2">
+                    <div class="row">
+                        <div class="col-8 d-flex align-items-center">
+                            <div style="font-weight: 700;">Total Orders</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="text-right" style="font-weight: 700;font-size: small;">Today</div>
+                            <div class="text-right" style="font-weight: 700;font-size: small;">Rp. 20.000</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="border: 0.5px solid;border-color: #dbd6d6;margin-top: 6px;margin-bottom: 1px;"></div>
+                <div style="display: block">
+                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                        [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <style>
     .round {
