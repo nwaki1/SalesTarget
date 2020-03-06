@@ -11,14 +11,43 @@ export class DailyTargetandPeriodComponent implements OnInit {
 
   public barChartOptions = {
     scaleShowVerticalLines: false,
+    scales: {
+      xAxes: [
+        {
+          stacked: true,
+          gridLines: {
+            display: false,
+            drawBorder: false
+          }
+        }
+      ],
+      yAxes: [
+        {
+          ticks: {
+            display: false
+          },
+          stacked: true,
+          gridLines: {
+            display: false,
+            drawBorder: false
+          },
+          label : {
+            display: false,
+          }
+        }
+      ]
+    },
+    gridlines : {
+      display : false
+    },
     responsive: true
   };
-  public barChartLabels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  public barChartLabels = ['Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'];
   public barChartType = 'bar';
   public barChartLegend = true;
   public barChartData = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
+    {data: [65, 59, 80, 81, 56, 55], label: 'Eff', backgroundColor : '#4edbd5'},
+    {data: [28, 48, 40, 19, 86, 27], label: 'Total', backgroundColor : '#C7F2F0'}
   ];
 
   constructor() { }

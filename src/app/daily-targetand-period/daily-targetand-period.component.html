@@ -1,49 +1,76 @@
 <!-- <div class="container"> -->
+<!-- <div >
+
+</div> -->
 <div class="col-12 pt-2">
-    
     <tabset #staticTabs>
-      <tab heading="Weekly" class="round">
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-6">
-                <div class="row">
-                    <div class="col-8">Calls</div>
-                    <div class="col-4">
-                        <div>Today</div>
-                        <div>10 | 20</div>
+        <tab heading="Weekly">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-6 my-3">
+                    <div class="card p-1" style="border: none;background-color: #fbfbfb;">
+                        <div class="px-2">
+                            <div class="row">
+                                <div class="col-8 d-flex align-items-center">
+                                    <div style="font-weight: 700;">Calls</div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="text-right" style="font-weight: 700;font-size: x-small;">Today</div>
+                                    <div class="text-right" style="font-weight: 700;font-size: small;">10 | 20</div>
+                                    <div class="text-right brown-small-text" style="font-size: xx-small;">Eff | Total</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="border: 0.5px solid;border-color: #dbd6d6;margin-top: 6px;margin-bottom: 1px;"></div>
+                        <div style="display: block">
+                            <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType">
+                            </canvas>
+                        </div>
                     </div>
                 </div>
-                <div style="display: block">
-                    <canvas baseChart
-                            [datasets]="barChartData"
-                            [labels]="barChartLabels"
-                            [options]="barChartOptions"
-                            [legend]="barChartLegend"
-                            [chartType]="barChartType">
-                    </canvas>
-                  </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6">
-                <div class="row">
-                    <div class="col-8">Total Orders</div>
-                    <div class="col-4">
-                        <div>Today</div>
-                        <div>Rp. 20.0000</div>
+                <div class="col-12 col-md-6 col-lg-6 my-3">
+                    <div class="card p-1" style="border: none;background-color: #fbfbfb;">
+                        <div class="px-2">
+                            <div class="row">
+                                <div class="col-8 d-flex align-items-center">
+                                    <div style="font-weight: 700;">Total Orders</div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="text-right" style="font-weight: 700;font-size: small;">Today</div>
+                                    <div class="text-right" style="font-weight: 700;font-size: small;">Rp. 20.000</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="border: 0.5px solid;border-color: #dbd6d6;margin-top: 6px;margin-bottom: 1px;"></div>
+                        <div style="display: block">
+                            <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType">
+                            </canvas>
+                        </div>
                     </div>
                 </div>
-                <div style="display: block">
-                    <canvas baseChart
-                            [datasets]="barChartData"
-                            [labels]="barChartLabels"
-                            [options]="barChartOptions"
-                            [legend]="barChartLegend"
-                            [chartType]="barChartType">
-                    </canvas>
-                  </div>
+                <div class="col-12 col-md-6 col-lg-6 my-3">
+                    <div class="card">
+                        <div class="px-2">
+                            <div class="row">
+                                <div class="col-8 d-flex align-items-center">Total Orders</div>
+                                <div class="col-4">
+                                    <div class="text-right">Today</div>
+                                    <div class="text-right">Rp. 20.000</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: block">
+                            <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </tab>
-      <tab heading="Monthly">Static content 1</tab>
-      <tab heading="Quarter">Static content 2</tab>
+        <tab heading="Monthly">Static content 1</tab>
+        <tab heading="Quarter">Static content 2</tab>
     </tabset>
 </div>
 <!-- </div> -->
@@ -51,5 +78,18 @@
 <style>
     .round {
         border-top: 20px;
+    }
+
+    /* <img src="../../assets/images/backgroundpencapaiansales.png" alt=""> */
+
+    .images-header {
+        background-image: url("../../assets/images/backgroundpencapaiansales.png");
+        background-size: cover;
+        height: 70px;
+    }
+
+    .brown-small-text {
+        color: #acacac;
+        font-size: 10px;
     }
 </style>
