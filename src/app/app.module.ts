@@ -9,6 +9,7 @@ import { ChartsModule } from 'ng2-charts';
 import { TargetComponent } from './target/target.component';
 import { TargetListComponent } from './target-list/target-list.component';
 import { RouterModule } from '@angular/router';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     BrowserModule,
+    AngularFontAwesomeModule,
     AppRoutingModule,
     ChartsModule,
     TabsModule.forRoot(),
