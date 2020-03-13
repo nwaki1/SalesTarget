@@ -1,25 +1,40 @@
 <div class="bg-white ">
     <div class="container pt-5 pb-4 ">
-        <div class="d-flex justify-content-end">
+       <div class="row">
+           <div class="col">
+            <ng-select [items]="items" [(ngModel)]="selectedLanguage" placeholder="seleect sales name" bindLabel="Name" bindValue="Id"
+            AllowClear ShowSearch></ng-select>
+           </div>
+           <div class="col"></div>
+           <div class="col d-flex justify-content-end">
             <div>{{dateNow}}</div>
+            </div>
         </div>
         <div class="row d-flex align-items-center">
-            <a href="dailytargetandperiodcomponent" routerLinkActive="active"><i class="fa fa-chevron-left" style=" color:black; padding-right: 10px; "></i></a> 
-        <span class="title mb-2"><h1 style="margin:0;">To Do Lists</h1></span>
+            <a href="dailytargetandperiodcomponent" routerLinkActive="active"><i class="fa fa-chevron-left"
+                    style=" color:black; padding-right: 10px; "></i></a>
+            <span class="title mb-2">
+                <h1 style="margin:0;">To Do Lists</h1>
+            </span>
         </div>
-        
-        
-        <div>{{ToDoList.length}} Tasks Left</div> 
-</div>        
+
+        <div>{{ToDoList.length}} Tasks Left</div>
     </div>
-    <div class="container my-3 ">
-        <div class="d-flex justify-content-end ">
-            <div class ="btn-group btn-group-sm">
-             <button type="button" class="btn btn-danger btn btn-primary"><a href="targetcomponent" class="nav-link"  routerLinkActive="active" style="color: white;">To Do </a></button>
-             <button type="button" class="btn btn-light btn btn-primary"><a href="dailytargetandperiodcomponent" class="nav-link"  routerLinkActive="active" style="color: #363636;">Completed</a> </button>
-            </div>
-         </div>
+</div>
+<div class="container my-3 ">
+    <div class="d-flex justify-content-end ">
+
+        <div class="btn-group btn-group-sm">
+            <button type="button" class="btn btn-light btn btn-primary" (click)="enableDisableRule()"
+                [ngClass]="{'red' : toggle, 'white': !toggle}"><a href="targetcomponent" class="nav-link"
+                    routerLinkActive="active">To Do </a></button>
+            <button type="button" class="btn btn-light btn btn-primary" (click)="enableDisableRule()"
+                [ngClass]="{'white' : toggle, 'red': !toggle}"> <a href="#" class="nav-link"
+                    routerLinkActive="active">Completed</a> </button>
+        </div>
     </div>
+</div>
 
 
-<app-target-list *ngFor ="let item of ToDoList;let i = index;" [item]="item" ></app-target-list> <!--[item]=item means simpan array yg d ts {titel..} ke dalam array item biar bs d kirim ke child-->
+<app-target-list *ngFor="let item of ToDoList;let i = index;" [item]="item"></app-target-list>
+<!--[item]=item means simpan array yg d ts {titel..} ke dalam array item biar bs d kirim ke child-->

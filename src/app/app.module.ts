@@ -10,14 +10,19 @@ import { TargetComponent } from './target/target.component';
 import { TargetListComponent } from './target-list/target-list.component';
 import { RouterModule } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     DailyTargetandPeriodComponent,
     TargetComponent,
-    TargetListComponent
+    TargetListComponent,
+    
   ],
+  
   imports: [
     BrowserModule,
     AngularFontAwesomeModule,
@@ -26,8 +31,13 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     TabsModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component:TargetComponent},
-    ])
+    ]),
+    NgSelectModule, 
+    FormsModule,
+    HttpClientModule,
+    
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

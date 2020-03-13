@@ -1,0 +1,30 @@
+.white {
+    background-color: #eeeeee;  
+}
+.white a{
+    color: #363636;
+}
+.white:hover{
+    background-color: #cfcfcf;
+}
+
+.red {
+    background-color: #EB3B5A;
+}
+.red a{
+    color:white;
+}
+.red:hover{
+    background-color: rgb(218, 39, 71);
+    color:white;
+}
+
+.ng-select.custom {
+    border:0px;
+    min-height: 0px;
+    border-radius: 0;
+}
+.ng-select.custom .ng-select-container  {            
+    min-height: 0px;
+    border-radius: 0;
+}
