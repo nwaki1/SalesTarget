@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
+import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-target',
@@ -12,18 +14,19 @@ import { ApiService } from '../api.service';
 export class TargetComponent implements OnInit {
 
   constructor(private router: Router, private apiService: ApiService) { }
-  dateNow = '5 March 2020';
+  dateNow = moment().format('LL');
+
   ToDoList = [];
 
   toggle = true;
   enableDisableRule(job) {
     this.toggle = !this.toggle;
   }
-  
+
   items = [];
 
   ngOnInit() {
-    this.apiService.getEmployee().subscribe(result=>{ //subscribe utk function blm tentu hasil ada. ex http hrs tunggu dlu
+    this.apiService.getEmployee().subscribe(result => { //subscribe utk function blm tentu hasil ada. ex http hrs tunggu dlu
       this.items = result;
     });
   }
@@ -42,7 +45,7 @@ export class TargetComponent implements OnInit {
         this.ToDoList.push(obj)
       });
 
-      
+
     });
   }
 
