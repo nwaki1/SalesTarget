@@ -13,26 +13,7 @@ export class TargetComponent implements OnInit {
 
   constructor(private router: Router, private apiService: ApiService) { }
   dateNow = '5 March 2020';
-  ToDoList = [
-    {
-      Title: 'To do title',
-      Percentage: 50,
-      Time: '2h',
-      Detail: 'detail here'
-    },
-    {
-      Title: 'To do title',
-      Percentage: 70,
-      Time: '2h',
-      Detail: 'detail here'
-    },
-    {
-      Title: 'To do title',
-      Percentage: 30,
-      Time: '2h',
-      Detail: 'detail here'
-    },
-  ]
+  ToDoList = [];
 
   toggle = true;
   enableDisableRule(job) {
@@ -42,11 +23,27 @@ export class TargetComponent implements OnInit {
   items = [];
 
   ngOnInit() {
-    this.apiService.getNews().subscribe(result=>{ //subscribe utk function blm tentu hasil ada. ex http hrs tunggu dlu
-      console.log(result);
-      this.items=result;
+    this.apiService.getEmployee().subscribe(result=>{ //subscribe utk function blm tentu hasil ada. ex http hrs tunggu dlu
+      this.items = result;
     });
-    
+  }
+
+  changeEmployee(employeeid) {
+    this.apiService.getTargeListItemByEmployee(employeeid).subscribe(result => {
+      console.log('result', result);
+      this.ToDoList = [];
+      result.forEach(element => {
+        var obj = {
+          Title: element.Name,
+          Percentage: (element.Target / 100) * element.Actual,
+          Time: '2h',
+          Detail: 'detail here'
+        }
+        this.ToDoList.push(obj)
+      });
+
+      
+    });
   }
 
 }

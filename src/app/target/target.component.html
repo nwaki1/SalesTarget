@@ -2,7 +2,7 @@
     <div class="container pt-5 pb-4 ">
        <div class="row">
            <div class="col">
-            <ng-select [items]="items" [(ngModel)]="selectedLanguage" placeholder="seleect sales name" bindLabel="Name" bindValue="Id"
+            <ng-select [items]="items" [(ngModel)]="selectedLanguage" (change)="changeEmployee(selectedLanguage)" placeholder="seleect sales name" bindLabel="Name" bindValue="Id"
             AllowClear ShowSearch></ng-select>
            </div>
            <div class="col"></div>

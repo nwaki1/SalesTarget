@@ -58,15 +58,15 @@
                             <div style="font-weight: 700;">Total Orders</div>
                         </div>
                         <div class="col-4">
-                            <div class="text-right" style="font-weight: 700;font-size: small;">Today</div>
-                            <div class="text-right" style="font-weight: 700;font-size: small;">Rp. 20.000</div>
+                            <!-- <div class="text-right" style="font-weight: 700;font-size: small;">Today</div>
+                            <div class="text-right" style="font-weight: 700;font-size: small;">{{ Total }}</div> -->
                         </div>
                     </div>
                 </div>
                 <div style="border: 0.5px solid;border-color: #dbd6d6;margin-top: 6px;margin-bottom: 1px;"></div>
                 <div style="display: block">
-                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels"
-                        [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType">
+                    <canvas *ngIf="showChart" baseChart [datasets]="barChartData2" [labels]="barChartLabels2"
+                        [options]="barChartOptions2" [legend]="barChartLegend2" [chartType]="barChartType2">
                     </canvas>
                 </div>
             </div>
