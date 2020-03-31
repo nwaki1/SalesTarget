@@ -16,6 +16,8 @@ export class TargetComponent implements OnInit {
   constructor(private router: Router, private apiService: ApiService) { }
   dateNow = moment().format('LL');
 
+  selectedLanguage = null;
+
   ToDoList = [];
 
   toggle = true;
@@ -32,7 +34,7 @@ export class TargetComponent implements OnInit {
   }
 
   changeEmployee(employeeid) {
-    this.apiService.getTargeListItemByEmployee(employeeid).subscribe(result => {
+    this.apiService.GetProgressSalesman(employeeid).subscribe(result => {
       console.log('result', result);
       this.ToDoList = [];
       result.forEach(element => {

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../environments/environment'
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -29,12 +29,12 @@ export class ApiService {
     return this.httpClient.get(environment.url + 'Employee/GetAll', this.httpOptions);
   }
 
-  getTargeListItemByEmployee(employeeid): Observable<any> {
-    return this.httpClient.get(environment.url + 'SalesTarget/GetSalesTargetListItemByEmployeeId/' + employeeid , this.httpOptions);
+  GetProgressSalesman(employeeid): Observable<any> {
+    return this.httpClient.get( environment.url + 'SalesTarget/GetProgressSalesman/' + employeeid , this.httpOptions);
   }
 
   GetSalesByEmployeeId(employeeid, datefrom, dateto): Observable<any> {
     // tslint:disable-next-line: max-line-length
-    return this.httpClient.get(environment.url + 'SalesTarget/GetSalesByEmployeeId/' + employeeid + '?DateFrom=' +  datefrom + '&DateTo=' + dateto, this.httpOptions);
+    return this.httpClient.get( environment.url + 'SalesTarget/GetSalesByEmployeeId/' + employeeid + '?DateFrom=' +  datefrom + '&DateTo=' + dateto, this.httpOptions);
   }
 }

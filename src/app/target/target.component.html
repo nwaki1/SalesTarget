@@ -2,7 +2,7 @@
     <div class="container pt-5 pb-4 ">
        <div class="row">
            <div class="col">
-            <ng-select [items]="items" [(ngModel)]="selectedLanguage" (change)="changeEmployee(selectedLanguage)" placeholder="seleect sales name" bindLabel="Name" bindValue="Id"
+            <ng-select [items]="items" [(ngModel)]="selectedLanguage" (change)="changeEmployee(selectedLanguage)" placeholder="select sales name" bindLabel="Name" bindValue="Id"
             AllowClear ShowSearch></ng-select>
            </div>
            <div class="col"></div>
@@ -25,10 +25,10 @@
     <div class="d-flex justify-content-end ">
 
         <div class="btn-group btn-group-sm">
-            <button type="button" class="btn btn-light btn btn-primary" (click)="enableDisableRule()"
+            <button type="button" class="btn btn-light btn btn-primary" 
                 [ngClass]="{'red' : toggle, 'white': !toggle}"><a class="nav-link"
                     routerLinkActive="active">To Do </a></button>
-            <button type="button" class="btn btn-light btn btn-primary" (click)="enableDisableRule()"
+            <button type="button" class="btn btn-light btn btn-primary"
                 [ngClass]="{'white' : toggle, 'red': !toggle}"> <a class="nav-link"
                     routerLinkActive="active">Completed</a> </button>
         </div>
