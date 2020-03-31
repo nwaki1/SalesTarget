@@ -21,30 +21,44 @@ export class TargetComponent implements OnInit {
   ToDoList = [];
 
   toggle = true;
+
+  items = [];
+
+  now = moment();
+
   enableDisableRule(job) {
     this.toggle = !this.toggle;
   }
 
-  items = [];
-
   ngOnInit() {
-    this.apiService.getEmployee().subscribe(result => { //subscribe utk function blm tentu hasil ada. ex http hrs tunggu dlu
+    this.apiService.getEmployee().subscribe(result => { // subscribe utk function blm tentu hasil ada. ex http hrs tunggu dlu
       this.items = result;
     });
   }
 
   changeEmployee(employeeid) {
     this.apiService.GetProgressSalesman(employeeid).subscribe(result => {
-      console.log('result', result);
+      // console.log('result', result);
       this.ToDoList = [];
       result.forEach(element => {
-        var obj = {
-          Title: element.Name,
-          Percentage: (element.Target / 100) * element.Actual,
-          Time: '2h',
-          Detail: 'detail here'
+
+        const endDate = moment(element.EndDateSalesTarget);
+        const remainingTargetInDays = endDate.diff(this.now, 'days');
+
+        let remaining = `${remainingTargetInDays} days remaining`;
+
+        if (remainingTargetInDays === 0) {
+          remaining = 'Due on Today';
         }
-        this.ToDoList.push(obj)
+
+        const obj = {
+          Title: element.Name,
+          Percentage: (100 / element.Target) * element.Actual,
+          Time: remaining,
+          Detail: `finished ${element.Actual} out of ${element.Target}`
+        };
+
+        this.ToDoList.push(obj);
       });
 
 

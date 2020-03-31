@@ -21,7 +21,7 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getNews(): Observable<any> { //utk declare function yg belum tentu ad hasil. ex http
+  getNews(): Observable<any> { // utk declare function yg belum tentu ad hasil. ex http
     return this.httpClient.get(`https://api.jsonbin.io/b/5e6b585c07f1954acedf3c43`);
   }
 
