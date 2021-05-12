@@ -24,7 +24,7 @@
     "angular-font-awesome": "^3.1.2",
     "bootstrap": "^4.4.1",
     "canvasjs": "^1.8.3",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "moment": "^2.24.0",
     "ng2-charts": "^2.3.0",
     "ngx-bootstrap": "^5.5.0",
